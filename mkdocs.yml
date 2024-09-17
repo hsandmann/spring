@@ -1,0 +1,12 @@
+site_name: ESPM - Spring Boot
+
+theme:
+  name: material
+  palette:
+    primary: "red"
+    accent: "red"
+    background: "white"
+
+nav:
+  - inicio: index.md
+  - fim: about.md
