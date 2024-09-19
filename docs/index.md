@@ -43,6 +43,11 @@
 
 Os microserviços são uma escolha popular para aplicações complexas, que precisam de escalabilidade e evolução constante. Eles se encaixam bem em ambientes de DevOps e na cultura de integração e entrega contínuas (CI/CD).
 
+<figure markdown="span">
+  ![](./assets/microsservices_chatgpt.webp)
+  <figcaption>Diagrama ilustrativo de uma arquitetura de microserviços, destacando conceitos como escalabilidade, resiliência, flexibilidade, autonomia e implantação independente. Fonte: Ilustração criada pelo <a href='https://chat.openai.com/' target='_blank'>ChatGPT</a> a partir de uma explicação técnica.</figcaption>
+</figure>
+
 Para conectar os microserviços e fazer com que operem com o mínimo de segurança é necessário implementar uma estratégica de acesso a todos os serviços. A figura abaixo ilustra a arquitetura de um sistema de microsserviços com um gateway de API.
 
 ``` mermaid
