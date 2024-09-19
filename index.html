@@ -378,6 +378,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="disclaimer.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disclaimer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -575,6 +595,21 @@
   <a class="glightbox" href="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="The Clean Architecture" src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg"></a>
   <figcaption>Ilustração dos conceitos de arquitetura limpa e suas "camadas". Fonte: <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" target="_blank">The Clean Architecture</a>.</figcaption>
 </figure>
+<pre class="mermaid"><code>zenuml
+    title Data Flux
+    @Actor Alice
+    @Control Controller
+    Service
+    @Entity Repository
+    @Database Postgres
+    Alice-&gt;Controller
+    Controller-&gt;Service: Parser
+    Service-&gt;Repository: Parser
+    Repository-&gt;Postgres
+    Postgres-&gt;Repository
+    Repository-&gt;Service: Parser
+    Service-&gt;Controller: Parser
+    Controller-&gt;Alice</code></pre>
 <h2 id="criando-um-microsservico-com-spring-boot">Criando um Microsserviço com Spring Boot</h2>
 <p>Initializr é uma ferramenta web que permite que você crie rapidamente um projeto Spring Boot. Você pode selecionar as dependências que deseja incluir em seu projeto, como Spring Web, JPA, Spring Data MongoDB, entre outras.
 <a href="https://start.spring.io/" target="_blank">Intializr</a></p>
