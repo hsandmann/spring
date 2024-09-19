@@ -5,6 +5,8 @@
 
 ## Arquitetura Limpa
 
+![The Clean Architecture](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+
 
 ## Criando um Microsserviço com Spring Boot
 
@@ -13,7 +15,18 @@ Initializr é uma ferramenta web que permite que você crie rapidamente um proje
 
 ## Compilando com Maven
 
+<!-- termynal -->
+
+``` { bash }
+> mvn clean package spring-boot:run
+```
+
 
 ## Dockerinando o Microsserviço
 
 
+## Referências
+
+[^1]: [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html){target='_blank'}
+[^2]: [Apache Maven Project](https://maven.apache.org/){target='_blank'}
+[^3]: [Maven Repository](https://mvnrepository.com/){target='_blank'}

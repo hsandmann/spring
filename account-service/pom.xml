@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>store</groupId>
 	<artifactId>account-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>account-service</name>
 	<properties>
 		<java.version>21</java.version>

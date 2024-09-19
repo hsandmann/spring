@@ -1,4 +1,4 @@
-package espm.account;
+package store.account;
 
 import lombok.Builder;
 import lombok.experimental.Accessors;

@@ -2,7 +2,6 @@ site_name: Spring Boot
 site_author: Sandmann, H.
 site_url: https://hsandmann.github.io/
 
-
 theme:
   name: material
   palette:
@@ -12,11 +11,34 @@ theme:
   feature:
     - content.code.copy
     - content.code.select
+    - content.code.annotate
+    - content.tooltips
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.tracking
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
 
 markdown_extensions:
   - admonition
   - attr_list
   - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -34,3 +56,21 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true  
+  - tables
+
+plugins:
+  - glightbox
+  - git-revision-date-localized
+  - search
+  - markdown-exec
+  - mkdocs-video
+  - termynal:
+      prompt_literal_start:
+        - "$"
+        - ">"
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

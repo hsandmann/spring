@@ -69,37 +69,81 @@ classDiagram
     AccountRepository ..> AccountModel
 ```
 
-=== "AccountController"
+??? note "Account"
 
-    ``` { .java title='AccountController.java' .copy .select linenums='1' }
-    --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/espm/account/AccountIn.java"
+
+    ``` tree
+    account
+        src
+            main
+                java
+                    store
+                        account
+                            AccountController.java
+                            AccountIn.java
+                            AccountOut.java
+        pom.xml
     ```
 
-=== "AccountIn"
 
-    ``` { .java title='AccountIn.java' .copy .select linenums='1' }
-    --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/espm/account/AccountIn.java"
+    === "AccountController"
+
+        ``` { .java title='AccountController.java' .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountIn.java"
+        ```
+
+    === "AccountIn"
+
+        ``` { .java title='AccountIn.java' .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountIn.java"
+        ```
+
+    === "AccountOut"
+
+        ``` { .java title='AccountOut.java' .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountIn.java"
+        ```
+
+??? note "Service"
+
+    ``` tree
+    account-service
+        src
+            main
+                java
+                    store
+                        account
+                            AccountResource.java
+                            AccountService.java
+                            AccountRepository.java
+                            Account.java
+                            AccountModel.java
+                            AccountParser.java
+                resources
+                    application.yaml
+        pom.xml
+        Dockerfile
     ```
 
-=== "AccountOut"
+    === "pom"
 
-    ``` { .java title='AccountOut.java' .copy .select linenums='1' }
-    --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/espm/account/AccountIn.java"
-    ```
+        ``` { .yaml title='pom.yaml' .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/pom.xml"
+        ```
+
+    === "application"
+
+        ``` { .yaml title='application.yaml' .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/resources/application.yaml"
+        ```
+
+    === "AccountResource"
+
+        ``` { .java title='AccountResource.java' .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountResource.java"
+        ```
 
 
 
-=== "Service"
+<!-- ![type:video](https://odysee.com/$/embed/@RobBraxmanTech:6/fingerprint-vs-vpn) -->
 
-
-``` tree
-account
-    pom.xml
-```
-
-
-=== service
-
-``` { .yaml title='application.yaml' .copy .select linenums="1" }
---8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/resources/application.yaml"
-```
