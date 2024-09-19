@@ -2,25 +2,30 @@ package store.account;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AccountResource {
+public class AccountResource implements AccountController {
 
-    private static List<String> accounts = new ArrayList<>();
+    private static List<AccountOut> accounts = new ArrayList<>();
 
-    @GetMapping("/account")
-    public List<String> getAccounts() {
+    @Override
+    public List<AccountOut> findAll() {
         return accounts;
     }
 
-    @PostMapping("/account")
-    public void postAccount(@RequestBody AccountIn in) {
-        accounts.add(in.name() + ": " + in.email());
+    @Override
+    public void create(@RequestBody AccountIn in) {
+        accounts.add(
+            AccountOut.builder()
+                .id(UUID.randomUUID().toString())
+                .name(in.name())
+                .email(in.email())
+                .build()
+        );
     }
     
 }
