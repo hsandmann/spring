@@ -100,7 +100,7 @@ Initializr é uma ferramenta web que permite que você crie rapidamente um proje
 ```
 
 
-## Dockerinando o Microsserviço
+## Dockerizando o Microsserviço
 
 
 ## Referências
