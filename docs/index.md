@@ -88,6 +88,23 @@ Em uma solução de microsserviços, a arquitetura do sistema é dividida em cam
   <figcaption>Ilustração dos conceitos de arquitetura limpa e suas "camadas". Fonte: <a href='https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html' target='_blank'>The Clean Architecture</a>.</figcaption>
 </figure>
 
+``` mermaid
+zenuml
+    title Data Flux
+    @Actor Alice
+    @Control Controller
+    Service
+    @Entity Repository
+    @Database Postgres
+    Alice->Controller
+    Controller->Service: Parser
+    Service->Repository: Parser
+    Repository->Postgres
+    Postgres->Repository
+    Repository->Service: Parser
+    Service->Controller: Parser
+    Controller->Alice
+```
 
 ## Criando um Microsserviço com Spring Boot
 
