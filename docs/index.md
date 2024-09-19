@@ -1,15 +1,19 @@
-1.
 
-Primeiro passo é criar o projeto no Spring Boot, para isso é aconselhável utilizar o gerador de projetos que pode ser acessado através do link [Spring Initializr](https://start.spring.io/){:target='_blank'}.
-
+## Microsserviços
 
 
-``` mermaid
-classDiagram
-    class Account {
-        -String id
-        -String name
-        -String email
-        -String password
-    }
-```
+
+## Arquitetura Limpa
+
+
+## Criando um Microsserviço com Spring Boot
+
+Initializr é uma ferramenta web que permite que você crie rapidamente um projeto Spring Boot. Você pode selecionar as dependências que deseja incluir em seu projeto, como Spring Web, JPA, Spring Data MongoDB, entre outras.
+[Intializr](https://start.spring.io/){:target='_blank'}
+
+## Compilando com Maven
+
+
+## Dockerinando o Microsserviço
+
+

@@ -1,4 +1,7 @@
-site_name: ESPM - Spring Boot
+site_name: Spring Boot
+site_author: Sandmann, H.
+site_url: https://hsandmann.github.io/
+
 
 theme:
   name: material
@@ -6,7 +9,28 @@ theme:
     primary: "red"
     accent: "red"
     background: "white"
+  feature:
+    - content.code.copy
+    - content.code.select
 
-nav:
-  - inicio: index.md
-  - fim: about.md
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      # auto_append: ["abbreviations.md"]
+      # base_path: ["."]
+      base_path: ["docs"]
+      url_download: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
