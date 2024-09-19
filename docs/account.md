@@ -126,7 +126,7 @@ classDiagram
         Dockerfile
     ```
 
-    <!-- === "pom"
+    === "pom"
 
         ``` { .yaml title='pom.yaml' .copy .select linenums="1" }
         --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/pom.xml"
@@ -148,7 +148,7 @@ classDiagram
 
         ``` { .java title='AccountResource.java' .copy .select linenums='1' }
         --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountResource.java"
-        ``` -->
+        ```
 
 
 
