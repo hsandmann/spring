@@ -83,7 +83,10 @@ flowchart LR
 
 Em uma solução de microsserviços, a arquitetura do sistema é dividida em camadas, onde cada camada tem uma responsabilidade específica. A arquitetura limpa é uma abordagem que propõe uma separação clara entre as camadas do sistema, de forma que a lógica de negócio seja independente de detalhes de implementação, como frameworks, bibliotecas ou banco de dados[^1].
 
-![The Clean Architecture](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+<figure markdown="span">
+  ![The Clean Architecture](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+  <figcaption>Ilustração dos conceitos de arquitetura limpa e suas "camadas". Fonte: <a href='https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html' target='_blank'>The Clean Architecture</a>.</figcaption>
+</figure>
 
 
 ## Criando um Microsserviço com Spring Boot
