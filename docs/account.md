@@ -89,19 +89,19 @@ classDiagram
     === "AccountController"
 
         ``` { .java title='AccountController.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountIn.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountIn.java"
         ```
 
     === "AccountIn"
 
         ``` { .java title='AccountIn.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountIn.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountIn.java"
         ```
 
     === "AccountOut"
 
         ``` { .java title='AccountOut.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountIn.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountIn.java"
         ```
 
 ??? note "Service"
@@ -113,6 +113,7 @@ classDiagram
                 java
                     store
                         account
+                            AccountApplication.java
                             AccountResource.java
                             AccountService.java
                             AccountRepository.java
@@ -135,6 +136,12 @@ classDiagram
 
         ``` { .yaml title='application.yaml' .copy .select linenums="1" }
         --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/resources/application.yaml"
+        ```
+
+    === "AccountApplication"
+
+        ``` { .java title='AccountApplication.java' .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountApplication.java"
         ```
 
     === "AccountResource"
