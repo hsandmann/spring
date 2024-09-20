@@ -85,11 +85,16 @@ classDiagram
         pom.xml
     ```
 
+    === "pom"
+
+        ``` { .yaml title='pom.xml' .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/pom.xml"
+        ```
 
     === "AccountController"
 
         ``` { .java title='AccountController.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountIn.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountController.java"
         ```
 
     === "AccountIn"
@@ -101,8 +106,15 @@ classDiagram
     === "AccountOut"
 
         ``` { .java title='AccountOut.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountIn.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountOut.java"
         ```
+
+    <!-- termynal -->
+
+    ``` { bash }
+    > mvn clean install
+    ```
+
 
 ??? note "Service"
 
@@ -128,7 +140,7 @@ classDiagram
 
     === "pom"
 
-        ``` { .yaml title='pom.yaml' .copy .select linenums="1" }
+        ``` { .yaml title='pom.xml' .copy .select linenums="1" }
         --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/pom.xml"
         ```
 
@@ -149,6 +161,13 @@ classDiagram
         ``` { .java title='AccountResource.java' .copy .select linenums='1' }
         --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountResource.java"
         ```
+
+
+    <!-- termynal -->
+
+    ``` { bash }
+    > mvn clean package spring-boot:run
+    ```
 
 
 

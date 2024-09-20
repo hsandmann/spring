@@ -89,21 +89,17 @@ Em uma solução de microsserviços, a arquitetura do sistema é dividida em cam
 </figure>
 
 ``` mermaid
-zenuml
-    title Data Flux
-    @Actor Alice
-    @Control Controller
-    Service
-    @Entity Repository
-    @Database Postgres
-    Alice->Controller
-    Controller->Service: Parser
-    Service->Repository: Parser
-    Repository->Postgres
-    Postgres->Repository
-    Repository->Service: Parser
-    Service->Controller: Parser
-    Controller->Alice
+sequenceDiagram
+    title Clean architecture's approach    
+    Actor User
+    User ->>+ Controller: 
+    Controller ->>+ Service: parser
+    Service ->>+ Repository: parser
+    Repository ->>+ Postgres: 
+    Postgres ->>- Repository: 
+    Repository ->>- Service: parser
+    Service ->>- Controller: parser
+    Controller ->>- User: 
 ```
 
 ## Criando um Microsserviço com Spring Boot
