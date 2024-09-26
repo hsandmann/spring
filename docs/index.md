@@ -118,6 +118,10 @@ Initializr é uma ferramenta web que permite que você crie rapidamente um proje
 
 ## Dockerizando o Microsserviço
 
+``` { .yaml title="compose.yaml" }
+--8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/compose.yaml"
+```
+
 
 ## Referências
 
