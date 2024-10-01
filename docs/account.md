@@ -48,6 +48,7 @@ classDiagram
             -String name
             -String email
             -String password
+            -String sha256
         }
         class AccountModel {
             +create(AccountIn accountIn): AccountOut

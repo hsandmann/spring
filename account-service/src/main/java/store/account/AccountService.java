@@ -1,20 +1,26 @@
 package store.account;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.StreamSupport;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AccountService {
 
-    public List<Account> findAll() {
-        return new ArrayList<>();
+    @Autowired
+    private AccountRepository accountRepository;
 
-    }
-
-    public void create(Account account) {
-
+    public Account create(Account account) {
+        return accountRepository.save(new AccountModel(account)).to();
     }
     
+    public List<Account> findAll() {
+        return StreamSupport
+            .stream(accountRepository.findAll().spliterator(), false)
+            .map(AccountModel::to)
+            .toList();
+    }
+
 }
