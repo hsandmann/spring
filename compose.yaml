@@ -4,9 +4,16 @@ services:
 
   db:
     image: postgres:latest
+    hostname: db
     environment:
       POSTGRES_DB: store
       POSTGRES_USER: store
       POSTGRES_PASSWORD: store
-    ports:
-      - 5432:5432
+    # ports:
+    #   - 5432:5432
+
+  account:
+    build:
+      context: ./account-service
+    environment:
+      - spring.datasource.url=jdbc:postgresql://db:5432/store

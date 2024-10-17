@@ -13,6 +13,7 @@ public class AccountService {
     private AccountRepository accountRepository;
 
     public Account create(Account account) {
+        account.sha256("calma marcio");
         return accountRepository.save(new AccountModel(account)).to();
     }
     

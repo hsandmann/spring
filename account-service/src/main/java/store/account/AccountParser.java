@@ -3,7 +3,7 @@ package store.account;
 public class AccountParser {
 
     public static AccountOut to(Account a) {
-        // if (a == null) {
+        // if (a == null) { // isso eh um ternario
         //     return null;
         // } else {
         //     return AccountOut.builder()....
