@@ -1,6 +1,8 @@
 site_name: Spring Boot
 site_author: Sandmann, H.
-site_url: https://hsandmann.github.io/
+site_url: https://hsandmann.github.io/spring
+repo_url: https://github.com/hsandmann/spring
+repo_name: hsandmann/spring
 
 theme:
   name: material
@@ -31,6 +33,7 @@ theme:
       bug: fontawesome/solid/robot
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
+    repo: fontawesome/brands/git-alt
 
 markdown_extensions:
   - admonition
@@ -71,6 +74,8 @@ plugins:
       prompt_literal_start:
         - "$"
         - ">"
+  - render_swagger:
+      allow_arbitrary_locations: true
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

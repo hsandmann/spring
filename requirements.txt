@@ -4,5 +4,6 @@ mkdocs-material
 mkdocs-material-extensions
 mkdocs-glightbox
 mkdocs-git-revision-date-localized-plugin
+mkdocs-render-swagger-plugin
 mkdocs-video
 termynal

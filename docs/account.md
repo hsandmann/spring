@@ -170,6 +170,10 @@ classDiagram
     > mvn clean package spring-boot:run
     ```
 
+## API
+
+!!swagger-http http://127.0.0.1:8080/account/api-docs!!
+
 
 
 <!-- ![type:video](https://odysee.com/$/embed/@RobBraxmanTech:6/fingerprint-vs-vpn) -->

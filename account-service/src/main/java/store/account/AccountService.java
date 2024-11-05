@@ -32,6 +32,11 @@ public class AccountService {
             .toList();
     }
 
+    public Account findById(String id) {
+        final AccountModel found = accountRepository.findById(id).orElse(null);
+        return found == null ? null : found.to();
+    }
+
     private String calcHash(String password) {
         try {
             MessageDigest digester = MessageDigest.getInstance("SHA-256");
