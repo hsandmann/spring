@@ -19,7 +19,10 @@ public class AccountService {
 
     public Account create(Account account) {
         final String pass = account.password().trim();
-        if (pass.length() < 4) throw new RuntimeException("Senha curta");        
+        if (findByEmail(account.email()) != null)
+            throw new RuntimeException("Email ja cadastrado");
+        if (pass.length() < 4)
+            throw new RuntimeException("Senha curta");
         account.sha256(calcHash(pass));
         account.creation(new Date());
         return accountRepository.save(new AccountModel(account)).to();
@@ -35,6 +38,20 @@ public class AccountService {
     public Account findById(String id) {
         final AccountModel found = accountRepository.findById(id).orElse(null);
         return found == null ? null : found.to();
+    }
+
+    public Account findByEmail(String email) {
+        final AccountModel found = accountRepository.findByEmail(email).orElse(null);
+        return found == null ? null : found.to();
+    }
+
+    public Account findByEmailAndPassword(String email, String password) {
+        final String sha256 = calcHash(password);
+        final AccountModel found = accountRepository
+            .findByEmailAndSha256(email, sha256)
+            .orElse(null);
+        return found == null ? null : found.to();
+
     }
 
     private String calcHash(String password) {

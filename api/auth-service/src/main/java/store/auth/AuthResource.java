@@ -28,8 +28,10 @@ public class AuthResource implements AuthController {
 
     @Override
     public ResponseEntity<LoginOut> login(Login in) {
-        // TODO Auto-generated method stub
-        return null;
+        final LoginOut out = authService.login(in);
+        return ResponseEntity
+            .ok()
+            .body(out);
     }
     
 }

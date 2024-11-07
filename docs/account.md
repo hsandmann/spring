@@ -89,25 +89,25 @@ classDiagram
     === "pom"
 
         ``` { .yaml title='pom.xml' .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/pom.xml"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/pom.xml"
         ```
 
     === "AccountController"
 
         ``` { .java title='AccountController.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountController.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/src/main/java/store/account/AccountController.java"
         ```
 
     === "AccountIn"
 
         ``` { .java title='AccountIn.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountIn.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/src/main/java/store/account/AccountIn.java"
         ```
 
     === "AccountOut"
 
         ``` { .java title='AccountOut.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account/src/main/java/store/account/AccountOut.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/src/main/java/store/account/AccountOut.java"
         ```
 
     <!-- termynal -->
@@ -142,25 +142,25 @@ classDiagram
     === "pom"
 
         ``` { .yaml title='pom.xml' .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/pom.xml"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account-service/pom.xml"
         ```
 
     === "application"
 
         ``` { .yaml title='application.yaml' .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/resources/application.yaml"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account-service/src/main/resources/application.yaml"
         ```
 
     === "AccountApplication"
 
         ``` { .java title='AccountApplication.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountApplication.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account-service/src/main/java/store/account/AccountApplication.java"
         ```
 
     === "AccountResource"
 
         ``` { .java title='AccountResource.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/account-service/src/main/java/store/account/AccountResource.java"
+        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account-service/src/main/java/store/account/AccountResource.java"
         ```
 
 

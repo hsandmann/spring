@@ -41,5 +41,16 @@ public class AccountResource implements AccountController {
                 .toUri()
         ).build();
     }
+
+    @Override
+    public ResponseEntity<AccountOut> login(AccountIn in) {
+        final Account a = accountService.findByEmailAndPassword(
+            in.email(),
+            in.password()
+        );
+        return a == null
+            ? ResponseEntity.notFound().build()
+            : ResponseEntity.ok().body(AccountParser.to(a));
+    }
     
 }

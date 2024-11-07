@@ -20,6 +20,11 @@ public interface AccountController {
         @PathVariable String idAccount
     );
 
+    @PostMapping("/account/login")
+    public ResponseEntity<AccountOut> login(
+        @RequestBody AccountIn in
+    );
+
     @PostMapping("/account")
     public ResponseEntity<Void> create(@RequestBody AccountIn in);
 
