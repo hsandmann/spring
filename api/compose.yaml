@@ -19,13 +19,20 @@ services:
       - spring.datasource.url=jdbc:postgresql://db:5432/store
     deploy:
       replicas: 1
-    # ports:
-    #   - 8080:8080
 
   auth:
     build:
       context: ./auth-service
     deploy:
       replicas: 1
+
+  gateway:
+    build:
+      context: ./gateway-service
+    deploy:
+      replicas: 1
     ports:
       - 8080:8080
+    depends_on:
+      - account
+      - auth

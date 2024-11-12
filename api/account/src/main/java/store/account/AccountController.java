@@ -26,6 +26,6 @@ public interface AccountController {
     );
 
     @PostMapping("/account")
-    public ResponseEntity<Void> create(@RequestBody AccountIn in);
+    public ResponseEntity<AccountOut> create(@RequestBody AccountIn in);
 
 }

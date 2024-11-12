@@ -31,15 +31,15 @@ public class AccountResource implements AccountController {
     }
 
     @Override
-    public ResponseEntity<Void> create(@RequestBody AccountIn in) {
-        String id = accountService.create(AccountParser.to(in)).id();
+    public ResponseEntity<AccountOut> create(@RequestBody AccountIn in) {
+        AccountOut a = AccountParser.to(accountService.create(AccountParser.to(in)));
         return ResponseEntity.created(
             ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(id)
+                .buildAndExpand(a.id())
                 .toUri()
-        ).build();
+        ).body(a);
     }
 
     @Override

@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import store.account.AccountIn;
+import store.account.AccountOut;
 
 @RestController
 public class AuthResource implements AuthController {
@@ -20,10 +21,10 @@ public class AuthResource implements AuthController {
             .password(in.password())
             .birthdate(in.birthdate())
             .build();
-        authService.register(account);
+        LoginOut out = authService.register(account);
         return ResponseEntity
             .ok()
-            .body(LoginOut.builder().jwt("marcio nao veio").build());
+            .body(out);
     }
 
     @Override
@@ -32,6 +33,16 @@ public class AuthResource implements AuthController {
         return ResponseEntity
             .ok()
             .body(out);
+    }
+
+    @Override
+    public ResponseEntity<AccountOut> solve(LoginOut in) {
+        final String jwt = in.jwt();
+        if (jwt == null || jwt.length() == 0) {
+            return ResponseEntity.badRequest().build();
+        }
+        AccountOut account = authService.solve(jwt);
+        return ResponseEntity.ok().body(account);         
     }
     
 }

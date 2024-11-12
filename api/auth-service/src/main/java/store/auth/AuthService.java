@@ -1,6 +1,7 @@
 package store.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import store.account.AccountController;
@@ -16,8 +17,12 @@ public class AuthService {
     @Autowired
     private JwtService jwtService;
 
-    public void register(AccountIn in) {
-        accountController.create(in);
+    public LoginOut register(AccountIn in) {
+        AccountOut account = accountController.create(in).getBody();
+        final String jwt = jwtService.create(account);
+        return LoginOut.builder()
+            .jwt(jwt)
+            .build();
     }
 
     public LoginOut login(Login in) {
@@ -33,6 +38,10 @@ public class AuthService {
             .build();
     }
 
-
+    public AccountOut solve(String jwt) {
+        String idAccount = jwtService.read(jwt);
+        ResponseEntity<AccountOut> response = accountController.findById(idAccount);
+        return response.getBody();
+    }
 
 }

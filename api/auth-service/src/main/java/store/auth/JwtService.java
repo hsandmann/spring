@@ -7,6 +7,8 @@ import javax.crypto.SecretKey;
 
 import org.springframework.stereotype.Service;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -19,10 +21,6 @@ public class JwtService {
 
     public String create(AccountOut account) {
 
-        final SecretKey key = Keys.hmacShaKeyFor(
-            Decoders.BASE64.decode(message_key)
-        );
-
         Date now = new Date();
         Long duration = 1000L * 60 * 60 * 24;
 
@@ -32,7 +30,7 @@ public class JwtService {
             .id(UUID.randomUUID().toString())
             .issuer("ESPM")
             .issuedAt(now)
-            .signWith(key)
+            .signWith(key())
             .notBefore(now)
             .expiration(new Date(now.getTime() + duration))
             .claim("account", account.id())
@@ -40,6 +38,29 @@ public class JwtService {
             .claim("email", account.email())
             .compact();
         return jwt;
+    }
+
+    public String read(String jwt) {
+
+        JwtParser parser = Jwts.parser().verifyWith(key()).build();
+        // verifica a assinatura do jwt
+        Claims claims = parser.parseSignedClaims(jwt).getPayload();
+        final Date now = new Date();
+        // verifica se ele jah estah ativo
+        if (now.compareTo(claims.getNotBefore()) < 0)
+            throw new RuntimeException("not before " + claims.getNotBefore());
+        // verifica se ele nao estah expirado
+        if (now.compareTo(claims.getExpiration()) > 0)
+            throw new RuntimeException("expired at " + claims.getExpiration());
+        // recupera o id account do token
+        String idAccount = claims.get("account").toString();
+        return idAccount;
+    }
+
+    private SecretKey key() {
+        return Keys.hmacShaKeyFor(
+            Decoders.BASE64.decode(message_key)
+        );
     }
     
 }
