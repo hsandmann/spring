@@ -16,6 +16,11 @@ spring:
           predicates:
             - Path=/auth/**
 
+        - id: account
+          uri: http://account:8080
+          predicates:
+            - Path=/account/**
+
         - id: espm
           uri: https://www.espm.br
           predicates:
