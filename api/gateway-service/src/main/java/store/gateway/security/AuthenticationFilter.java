@@ -72,6 +72,9 @@ public class AuthenticationFilter implements GlobalFilter {
                 }
                 AccountOut account = response.getBody();
                 System.out.println(account);
+                exchange.getRequest().mutate()
+                    .header("ACCOUNT_ID", account.id())
+                    .build();
                 return chain.filter(exchange);
             });
     }

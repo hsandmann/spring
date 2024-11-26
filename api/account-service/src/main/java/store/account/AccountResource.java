@@ -52,5 +52,10 @@ public class AccountResource implements AccountController {
             ? ResponseEntity.notFound().build()
             : ResponseEntity.ok().body(AccountParser.to(a));
     }
+
+    @Override
+    public ResponseEntity<AccountOut> whoAmI(String accountId) {
+        return findById(accountId);
+    }
     
 }
