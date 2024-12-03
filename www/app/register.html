@@ -1,16 +1,18 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="cache-control" content="no-cache" />
         <script src="./app.js"></script>
     </head>
     <body>
         <a href="/">Home</a>
         <hr>
-        <form>
+        <form action="javascript:register();" method="post">
             <input type="text" name="name" placeholder="Name"><br>
             <input type="date" name="birthdate" placeholder="Birthdate"><br>
             <input type="email" name="email" placeholder="Email" value=""><br>
             <input type="password" name="password" placeholder="Password" value=""><br>
-            <input type="button" value="Register" onclick="register();">
+            <input type="submit" value="Register">
         </form>
     </body>
 </html>

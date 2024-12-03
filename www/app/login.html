@@ -1,14 +1,16 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="cache-control" content="no-cache" />
         <script src="./app.js"></script>
     </head>
     <body>
         <a href="/">Home</a>
         <hr>
-        <form action="login.php" method="post">
+        <form action="javascript:login();" method="post">
             <input type="email" name="email" placeholder="Email"><br>
             <input type="password" name="password" placeholder="Password"><br>
-            <input type="button" value="Login" onclick="login();">
+            <input type="submit" value="Login">
         </form>
     </body>
 </html>

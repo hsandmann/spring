@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 public class AccountParser {
 
     private static final SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd");
-    private static final SimpleDateFormat sdfDateTime = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat sdfDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
     public static AccountOut to(Account a) {
         // if (a == null) { // isso eh um ternario

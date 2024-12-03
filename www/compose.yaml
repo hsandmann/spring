@@ -3,8 +3,12 @@ name: store-www
 services:
 
   www:
-    image: nginx:latest
+    # image: nginx:latest
+    build:
+      dockerfile_inline: |
+        FROM nginx:latest
+        COPY ./app /usr/share/nginx/html
     ports:
       - 80:80
-    volumes:
-      - ./app:/usr/share/nginx/html
+    # volumes:
+    #   - ./app:/usr/share/nginx/html
