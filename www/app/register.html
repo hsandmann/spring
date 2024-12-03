@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script>
+
+            const API = 'http://localhost:8080';
+            
+            const register = () => {
+                var email = document.querySelector('input[name="email"]').value;
+                var paassword = document.querySelector('input[name="password"]').value;
+                var name = document.querySelector('input[name="name"]').value;
+                var birthdate = document.querySelector('input[name="birthdate"]').value;
+                console.log(birthdate);
+                fetch(`${API}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: paassword,
+                        name: name,
+                        birthdate: birthdate
+                    })
+                }).then(response => {
+                    response.json().then(data => {
+                        console.log(data['jwt']);
+                    });
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
+        </script>
+    </head>
+    <body>
+        <a href="/">Home</a>
+        <hr>
+        <form>
+            <input type="text" name="name" placeholder="Name"><br>
+            <input type="date" name="birthdate" placeholder="Birthdate"><br>
+            <input type="email" name="email" placeholder="Email" value=""><br>
+            <input type="password" name="password" placeholder="Password" value=""><br>
+            <input type="button" value="Register" onclick="register();">
+        </form>
+    </body>
+</html>

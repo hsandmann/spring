@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+
+            const API = 'http://localhost:8080';
+            
+            const login = () => {
+                var email = document.querySelector('input[name="email"]').value;
+                var paassword = document.querySelector('input[name="password"]').value;
+                fetch(`${API}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: paassword
+                    })
+                }).then(response => {
+                    response.json().then(data => {
+                        console.log(data['jwt']);
+                    });
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
+        </script>
+    </head>
+    <body>
+        <a href="/">Home</a>
+        <hr>
+        <form action="login.php" method="post">
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="button" value="Login" onclick="login();">
+        </form>
+    </body>
+</html>
