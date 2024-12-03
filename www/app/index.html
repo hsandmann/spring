@@ -1,6 +1,18 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="./app.js"></script>
+    </head>
     <body>
+        <div id="info" style="display: none;">
+            <div id="account">Olá, <span id='name'></span>!</div>
+            <div id="logout"><a href="javascript:logout();">sair</a></div>
+            <hr>
+        </div>
         <a href="register.html">Register</a><br>
         <a href="login.html">Login</a>
     </body>
+    <script>
+        init();
+    </script>
 </html>
